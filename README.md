@@ -65,8 +65,24 @@ if lbblfl="Y" And AVAL Ne. Then Base=Aval;
 else base=.;
 
 if ablfl ne "Y" and aval ne .  then chg=aval-base;
-anrhi=lbornrhi;
-anrlo=lbstnrlo;
+anrhi=put(lbornrhi, best.);
+anrlo=put(LBSTNRLO, best.);
+
+IF ABLFL="Y" Then BNRIND=LBNRIND;
+IF ABLFL NE 'Y' THEN ANRIND=LBNRIND;
+
+aperiod=visit;
+aperiodc=visit;
+ady=visitdy;
+
+if LBDTC ne ' ' then LBDTC_=CAT(LBDTC||"T"||"00:00:00");
+ADTM=input(LBDTC_, anydtdtm.);
+ADT=input(LBDTC, YYMMDD10.);
+ATM=input(substr(LBDTC_,12),time8.);
+ADTF=" ";
+ATMF="Y";
+Format ADT date9.
+
 lbstnrhi=lbstnrhi;
 
 
